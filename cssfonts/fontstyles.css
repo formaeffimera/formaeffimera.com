@@ -1,15 +1,22 @@
 @font-face {
     font-family: 'Inter';
-    src: url('fonts/Inter-VariableFont_opsz,wght.ttf') format('truetype-variations');
+    src: url('../fonts/Inter-VariableFont_opsz,wght.ttf') format('truetype-variations');
     font-weight: 100 900;
     font-style: normal;
-    font-optical-sizing: auto; /* Permette al browser di usare la dimensione ottica */
+    font-optical-sizing: auto;
 }
 
 @font-face {
     font-family: 'Inter';
-    src: url('fonts/Inter-Italic-VariableFont_opsz,wght.ttf') format('truetype-variations');
+    src: url('../fonts/Inter-Italic-VariableFont_opsz,wght.ttf') format('truetype-variations');
     font-weight: 100 900;
     font-style: italic;
     font-optical-sizing: auto;
+}
+
+.fromaeffimera-text {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400; /* Cambia il peso come preferisci */
+    font-style: normal; /* Usa 'italic' per corsivo */
+    font-size: 20px;
 }
