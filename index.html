@@ -6,7 +6,7 @@
     <title>Test Font Inter</title>
     <link rel="stylesheet" href="cssfonts/fontstyles.css"> <!-- Collega il CSS con i font -->
     <style>
-        /* Stili personalizzati per la posizione e formattazione del testo */
+        /* Stili per posizionamento e formattazione del testo */
         body {
             margin: 0;
             padding: 0;
@@ -17,19 +17,25 @@
             overflow-x: hidden; /* Evita lo scroll orizzontale */
         }
 
+        .text-container {
+            width: 100%; /* Adatta alla larghezza dello schermo */
+            overflow-wrap: break-word; /* Spezza la parola se necessario */
+            padding: 20px;
+        }
+
         .fromaeffimera-text {
             font-family: 'Inter', sans-serif;
             font-weight: 400;
             font-size: 200pt;
             color: black;
             text-transform: uppercase;
-            margin: 20px;
-            white-space: break-spaces; /* Permette di andare a capo senza aggiungere trattini */
-            word-break: break-word; /* Spezza la parola se necessario */
+            white-space: normal; /* Permette al testo di andare a capo */
         }
     </style>
 </head>
 <body>
-    <p class="fromaeffimera-text">FORMÆFFIMERA</p>
+    <div class="text-container">
+        <p class="fromaeffimera-text">FORMÆFFIMERA</p>
+    </div>
 </body>
 </html>
