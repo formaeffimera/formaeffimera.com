@@ -41,7 +41,7 @@
             font-family: 'Inter', sans-serif;
             font-weight: 400;
             font-size: 250pt; /* Dimensione per schermi grandi */
-            color: black; /* Colore del testo impostato su nero */
+            color: black !important; /* Forza il colore del testo su nero */
             text-transform: uppercase;
             white-space: normal; /* Permette al testo di andare a capo */
         }
@@ -50,7 +50,7 @@
         @media (max-width: 1024px) {
             .fromaeffimera-text {
                 font-size: 125pt; /* Riduce la dimensione del font a 125pt su tablet */
-                color: black; /* Mantiene il testo nero su tablet */
+                color: black !important; /* Forza il testo nero su tablet */
             }
         }
 
@@ -58,7 +58,7 @@
         @media (max-width: 768px) {
             .fromaeffimera-text {
                 font-size: 90pt; /* Imposta il font a 90pt su cellulari */
-                color: black; /* Mantiene il testo nero su cellulare */
+                color: black !important; /* Forza il testo nero su cellulare */
             }
             .text-container {
                 padding: 10px; /* Riduce il padding per minimizzare i contorni */
