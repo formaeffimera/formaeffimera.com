@@ -26,16 +26,23 @@
         .fromaeffimera-text {
             font-family: 'Inter', sans-serif;
             font-weight: 400;
-            font-size: 200pt;
+            font-size: 250pt; /* Dimensione per schermi grandi */
             color: black;
             text-transform: uppercase;
             white-space: normal; /* Permette al testo di andare a capo */
         }
 
+        /* Media Query per schermi medi (tablet) */
+        @media (max-width: 1024px) {
+            .fromaeffimera-text {
+                font-size: 125pt; /* Riduce la dimensione del font a 125pt su tablet */
+            }
+        }
+
         /* Media Query per schermi piccoli (cellulari) */
         @media (max-width: 768px) {
             .fromaeffimera-text {
-                font-size: 100pt; /* Riduce la dimensione del font a 100pt su schermi piccoli */
+                font-size: 80pt; /* Riduce la dimensione del font a 80pt su cellulari piccoli */
             }
         }
     </style>
