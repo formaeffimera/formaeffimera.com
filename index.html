@@ -3,9 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test Font Inter</title>
+    <title>Test Font Inter con Video di Sfondo</title>
     <link rel="stylesheet" href="cssfonts/fontstyles.css"> <!-- Collega il CSS con i font -->
     <style>
+        /* Stili per il video di sfondo */
+        .background-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1; /* Mette il video sotto il contenuto */
+        }
+
         /* Stili per posizionamento e formattazione del testo */
         body {
             margin: 0;
@@ -22,13 +33,15 @@
             overflow-wrap: break-word; /* Spezza la parola se necessario */
             padding: 20px;
             box-sizing: border-box; /* Considera il padding all'interno della larghezza */
+            position: relative; /* Mette il testo sopra il video */
+            z-index: 1; /* Posiziona il testo sopra il video */
         }
 
         .fromaeffimera-text {
             font-family: 'Inter', sans-serif;
             font-weight: 400;
             font-size: 250pt; /* Dimensione per schermi grandi */
-            color: black;
+            color: white; /* Colore del testo in contrasto con lo sfondo video */
             text-transform: uppercase;
             white-space: normal; /* Permette al testo di andare a capo */
         }
@@ -52,6 +65,14 @@
     </style>
 </head>
 <body>
+    <!-- Video di sfondo -->
+    <video autoplay muted loop class="background-video">
+        <source src="video/background-video.mp4" type="video/mp4">
+        <!-- Aggiungi altri formati di video per maggiore compatibilità se necessario -->
+        Il tuo browser non supporta il tag video.
+    </video>
+
+    <!-- Testo che scorre sopra il video -->
     <div class="text-container">
         <p class="fromaeffimera-text">FORMÆFFIMERA</p>
     </div>
