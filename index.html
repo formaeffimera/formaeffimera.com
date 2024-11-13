@@ -21,6 +21,7 @@
             width: 100%; /* Adatta alla larghezza dello schermo */
             overflow-wrap: break-word; /* Spezza la parola se necessario */
             padding: 20px;
+            box-sizing: border-box; /* Considera il padding all'interno della larghezza */
         }
 
         .fromaeffimera-text {
@@ -43,6 +44,10 @@
         @media (max-width: 768px) {
             .fromaeffimera-text {
                 font-size: 80pt; /* Riduce la dimensione del font a 80pt su cellulari piccoli */
+            }
+            .text-container {
+                max-width: 100vw; /* Limita la larghezza massima al viewport per evitare lo scroll orizzontale */
+                padding: 10px; /* Riduce il padding per minimizzare i contorni */
             }
         }
     </style>
