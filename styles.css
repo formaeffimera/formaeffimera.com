@@ -19,13 +19,13 @@
     left: 50%;
     transform: translateX(-50%);
     display: flex;
-    gap: 3px; /* Distanza minima tra le icone */
+    gap: 2px; /* Distanza minima tra le icone */
     z-index: 9999; /* Assicura che sia sopra tutti gli altri contenuti */
 }
 
 .social-icons img {
-    width: 6px;
-    height: 6px;
+    width: 5px; /* Riduzione drastica delle dimensioni */
+    height: 5px;
     object-fit: contain;
 }
 
