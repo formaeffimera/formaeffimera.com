@@ -59,11 +59,11 @@
             font-size: 250pt;
             color: black !important;
             text-transform: uppercase;
-            line-height: 250pt; /* Interlinea ridotta solo per desktop */
+            line-height: 250pt; /* Interlinea ridotta per desktop */
             white-space: normal;
         }
 
-        /* Media Query per schermi medi (tablet) */
+        /* Modifica per tablet */
         @media (max-width: 1024px) {
             .fromaeffimera-text {
                 font-size: 125pt;
@@ -74,7 +74,7 @@
             }
         }
 
-        /* Media Query per schermi piccoli (smartphone) */
+        /* Modifica per smartphone */
         @media (max-width: 768px) {
             .fromaeffimera-text {
                 font-size: 90pt;
@@ -88,7 +88,7 @@
             }
         }
 
-        /* Griglia per desktop con celle quadrate */
+        /* Griglia desktop con celle quadrate */
         .grid-overlay {
             position: relative;
             top: 0;
@@ -105,6 +105,7 @@
             box-sizing: border-box;
         }
 
+        /* Scritte bianche per la griglia desktop */
         .grid-overlay div {
             display: flex;
             align-items: flex-start;
@@ -118,27 +119,27 @@
             text-align: left;
         }
 
-        /* Adattamento griglia tablet e smartphone a colonna singola */
+        /* Griglia adattiva per tablet e smartphone */
         @media (max-width: 1024px) {
             .grid-overlay {
-                grid-template-columns: 1fr;
-                grid-auto-rows: auto;
+                grid-template-columns: repeat(3, 1fr); /* Mantiene 3 colonne */
+                grid-auto-rows: auto; /* Altezza adattiva al contenuto */
             }
             .grid-overlay div {
                 font-size: 18px;
-                font-family: 'Courier Prime Regular', monospace;
+                font-family: 'Courier Prime Regular', monospace; /* Regular per tablet */
                 font-weight: normal;
             }
         }
 
         @media (max-width: 768px) {
             .grid-overlay {
-                grid-template-columns: 1fr;
-                grid-auto-rows: auto;
+                grid-template-columns: repeat(3, 1fr); /* Mantiene 3 colonne */
+                grid-auto-rows: auto; /* Altezza adattiva al contenuto */
             }
             .grid-overlay div {
                 font-size: 26px;
-                font-family: 'Courier Prime Regular', monospace;
+                font-family: 'Courier Prime Regular', monospace; /* Regular per smartphone */
                 font-weight: normal;
             }
         }
