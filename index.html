@@ -7,7 +7,21 @@
     <link rel="icon" href="img/icon.png" type="image/png">
     <link rel="stylesheet" href="cssfonts/fontstyles.css">
     <style>
-        /* Stili per il video di sfondo */
+        /* Importa i font */
+        @font-face {
+            font-family: 'Courier Prime Bold';
+            src: url('fonts/CourierPrime-Bold.ttf') format('truetype');
+            font-weight: bold;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Courier Prime Regular';
+            src: url('fonts/CourierPrime-Regular.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        /* Video di sfondo */
         .background-video {
             position: fixed;
             top: 0;
@@ -79,7 +93,7 @@
             grid-auto-rows: calc(100vw / 3);
             overflow-y: auto;
             overflow-x: hidden;
-            z-index: 2;
+            z-index: 2; /* Assicura che le scritte bianche siano sopra il video */
             padding: 20px;
             box-sizing: border-box;
         }
