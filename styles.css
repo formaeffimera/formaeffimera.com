@@ -12,6 +12,7 @@
     font-style: italic;
 }
 
+/* Stili per la barra dei social media in basso */
 .social-icons {
     position: fixed;
     bottom: 5px;
@@ -19,11 +20,13 @@
     transform: translateX(-50%);
     display: flex;
     gap: 3px; /* Distanza minima tra le icone */
-    z-index: 100; /* Assicura che sia sopra tutti gli altri contenuti */
+    z-index: 9999; /* Assicura che sia sopra tutti gli altri contenuti */
 }
 
 .social-icons img {
-    width: 3px;
-    height: 3px;
+    width: 6px;
+    height: 6px;
+    object-fit: contain;
 }
+
 
