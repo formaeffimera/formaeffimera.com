@@ -5,8 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="icon" href="img/icon.png" type="image/png">
-    <link rel="stylesheet" href="cssfonts/fontstyles.css"> <!-- Collega il CSS con i font -->
+    <link rel="stylesheet" href="cssfonts/fontstyles.css">
     <style>
+        /* Importa il font Courier Prime Bold */
+        @font-face {
+            font-family: 'Courier Prime Bold';
+            src: url('fonts/CourierPrime-Bold.ttf') format('truetype');
+            font-weight: bold;
+            font-style: normal;
+        }
+
         /* Stili per il video di sfondo */
         .background-video {
             position: fixed;
@@ -15,55 +23,78 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            z-index: -1; /* Mette il video sotto il contenuto */
+            z-index: -2; /* Mette il video sotto tutto il contenuto */
         }
 
-        /* Stili per posizionamento e formattazione del testo */
+        /* Stili per il corpo e la scritta principale */
         body {
             margin: 0;
             padding: 0;
-            display: flex;
-            justify-content: flex-start;
-            align-items: flex-start;
-            height: 100vh;
-            overflow-x: hidden; /* Evita lo scroll orizzontale */
+            overflow: hidden;
         }
 
         .text-container {
-            width: 100%; /* Adatta alla larghezza dello schermo */
-            overflow-wrap: break-word; /* Spezza la parola se necessario */
-            padding: 20px;
-            box-sizing: border-box; /* Considera il padding all'interno della larghezza */
-            position: relative; /* Mette il testo sopra il video */
-            z-index: 1; /* Posiziona il testo sopra il video */
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: -1; /* Posiziona il testo sopra il video, ma sotto la griglia */
         }
 
         .fromaeffimera-text {
             font-family: 'Inter', sans-serif;
             font-weight: 400;
-            font-size: 250pt; /* Dimensione per schermi grandi */
-            color: black !important; /* Forza il colore del testo su nero */
+            font-size: 250pt;
+            color: black !important;
             text-transform: uppercase;
-            white-space: normal; /* Permette al testo di andare a capo */
         }
 
-        /* Media Query per schermi medi (tablet) */
-        @media (max-width: 1024px) {
-            .fromaeffimera-text {
-                font-size: 125pt; /* Riduce la dimensione del font a 125pt su tablet */
-                color: black !important; /* Forza il testo nero su tablet */
+        /* Stili per la griglia */
+        .grid-overlay {
+            position: relative;
+            display: grid;
+            grid-template-columns: repeat(9, 1fr);
+            grid-template-rows: repeat(9, 1fr);
+            width: 100vw;
+            height: 100vh;
+            overflow: auto;
+            z-index: 1; /* Posiziona la griglia sopra il testo e il video */
+        }
+
+        .grid-overlay div {
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+            padding: 10px;
+            box-sizing: border-box;
+            color: white;
+            font-family: 'Courier Prime Bold', monospace; /* Usa Courier Prime Bold */
+            font-weight: bold;
+            white-space: pre-line; /* Permette di andare a capo nel testo */
+        }
+
+        /* Dimensioni del testo adattive */
+        @media (min-width: 1025px) {
+            .grid-overlay div {
+                font-size: 10px; /* Piccolo su schermi grandi */
             }
         }
 
-        /* Media Query per schermi piccoli (cellulari) */
+        @media (max-width: 1024px) and (min-width: 769px) {
+            .grid-overlay div {
+                font-size: 18px; /* Medio su schermi intermedi */
+            }
+        }
+
         @media (max-width: 768px) {
-            .fromaeffimera-text {
-                font-size: 90pt; /* Imposta il font a 90pt su cellulari */
-                color: black !important; /* Forza il testo nero su cellulare */
+            .grid-overlay div {
+                font-size: 26px; /* Grande su cellulari */
             }
-            .text-container {
-                padding: 10px; /* Riduce il padding per minimizzare i contorni */
-            }
+        }
+
+        /* Effetto hover per simulare lo scorrimento */
+        .grid-overlay div:hover {
+            cursor: pointer;
+            opacity: 0.8;
         }
     </style>
 </head>
@@ -71,13 +102,29 @@
     <!-- Video di sfondo -->
     <video autoplay muted loop class="background-video">
         <source src="video/background-video.mp4" type="video/mp4">
-        <!-- Aggiungi altri formati di video per maggiore compatibilità se necessario -->
         Il tuo browser non supporta il tag video.
     </video>
 
-    <!-- Testo che scorre sopra il video -->
+    <!-- Testo principale che scorre sopra il video -->
     <div class="text-container">
         <p class="fromaeffimera-text">FORMÆFFIMERA</p>
+    </div>
+
+    <!-- Griglia sovrapposta -->
+    <div class="grid-overlay">
+        <!-- Caselle della griglia con nomi progressivi -->
+        <div>doc01<br>documento primo</div>
+        <div>doc02<br>documento secondo</div>
+        <div>doc03<br>documento terzo</div>
+        <div>doc04<br>documento quarto</div>
+        <div>doc05<br>documento quinto</div>
+        <div>doc06<br>documento sesto</div>
+        <div>doc07<br>documento settimo</div>
+        <div>doc08<br>documento ottavo</div>
+        <div>doc09<br>documento nono</div>
+        <!-- Aggiungi altre celle vuote per riempire la griglia -->
+        <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+        <!-- Continua ad aggiungere div vuoti fino a riempire la griglia 9x9 -->
     </div>
 </body>
 </html>
