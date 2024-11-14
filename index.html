@@ -56,7 +56,7 @@
             grid-template-rows: repeat(9, 1fr);
             width: 100vw;
             height: 100vh;
-            overflow: auto;
+            overflow: hidden;
             z-index: 1; /* Posiziona la griglia sopra il testo e il video */
         }
 
@@ -64,12 +64,14 @@
             display: flex;
             align-items: flex-start;
             justify-content: flex-start;
-            padding: 10px;
+            padding: 5px;
             box-sizing: border-box;
             color: white;
             font-family: 'Courier Prime Bold', monospace; /* Usa Courier Prime Bold */
             font-weight: bold;
-            white-space: pre-line; /* Permette di andare a capo nel testo */
+            hyphens: auto; /* Abilita la sillabazione automatica */
+            overflow-wrap: break-word; /* Spezza le parole se necessario */
+            text-align: left;
         }
 
         /* Dimensioni del testo adattive */
