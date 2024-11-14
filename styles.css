@@ -12,21 +12,18 @@
     font-style: italic;
 }
 
-/* Stili per la barra dei social media in basso */
-.social-icons {
+/* Stili per le icone social in basso */
+a img {
     position: fixed;
     bottom: 5px;
     left: 50%;
     transform: translateX(-50%);
-    display: flex;
-    gap: 2px; /* Distanza minima tra le icone */
-    z-index: 9999; /* Assicura che sia sopra tutti gli altri contenuti */
+    display: inline-block;
+    width: 8px; /* Ridimensionamento drastico */
+    height: 8px;
+    margin-right: 3px; /* Spaziatura minima tra le icone */
+    z-index: 9999; /* Forza sopra tutto */
 }
 
-.social-icons img {
-    width: 5px; /* Riduzione drastica delle dimensioni */
-    height: 5px;
-    object-fit: contain;
-}
 
 
