@@ -7,14 +7,6 @@
     <link rel="icon" href="img/icon.png" type="image/png">
     <link rel="stylesheet" href="cssfonts/fontstyles.css">
     <style>
-        /* Importa il font Courier Prime Bold */
-        @font-face {
-            font-family: 'Courier Prime Bold';
-            src: url('fonts/CourierPrime-Bold.ttf') format('truetype');
-            font-weight: bold;
-            font-style: normal;
-        }
-
         /* Stili per il video di sfondo */
         .background-video {
             position: fixed;
@@ -23,21 +15,21 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            z-index: -2; /* Mette il video sotto tutto il contenuto */
+            z-index: -1; /* Mette il video sotto il contenuto */
         }
 
-        /* Stili per il corpo e la scritta principale */
+        /* Stili per posizionamento e formattazione del testo principale */
         body {
             margin: 0;
             padding: 0;
-            overflow: hidden;
+            overflow-x: hidden; /* Evita lo scroll orizzontale */
         }
 
         .text-container {
             position: fixed;
             top: 20px;
             left: 20px;
-            z-index: -1; /* Posiziona il testo sopra il video, ma sotto la griglia */
+            z-index: 0; /* Posiziona il testo sopra il video, ma sotto la griglia */
         }
 
         .fromaeffimera-text {
@@ -46,17 +38,19 @@
             font-size: 250pt;
             color: black !important;
             text-transform: uppercase;
+            white-space: normal;
         }
 
         /* Stili per la griglia */
         .grid-overlay {
-            position: relative;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             display: grid;
             grid-template-columns: repeat(9, 1fr);
             grid-template-rows: repeat(9, 1fr);
-            width: 100vw;
-            height: 100vh;
-            overflow: hidden;
             z-index: 1; /* Posiziona la griglia sopra il testo e il video */
         }
 
@@ -67,10 +61,10 @@
             padding: 5px;
             box-sizing: border-box;
             color: white;
-            font-family: 'Courier Prime Bold', monospace; /* Usa Courier Prime Bold */
+            font-family: 'Courier Prime Bold', monospace;
             font-weight: bold;
-            hyphens: auto; /* Abilita la sillabazione automatica */
-            overflow-wrap: break-word; /* Spezza le parole se necessario */
+            hyphens: auto;
+            overflow-wrap: break-word;
             text-align: left;
         }
 
@@ -93,11 +87,6 @@
             }
         }
 
-        /* Effetto hover per simulare lo scorrimento */
-        .grid-overlay div:hover {
-            cursor: pointer;
-            opacity: 0.8;
-        }
     </style>
 </head>
 <body>
