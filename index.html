@@ -15,14 +15,14 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            z-index: -1; /* Mette il video sotto il contenuto */
+            z-index: -1;
         }
 
         /* Stili per il corpo e il testo principale */
         body {
             margin: 0;
             padding: 0;
-            overflow-x: hidden; /* Evita lo scroll orizzontale */
+            overflow-x: hidden;
             display: flex;
             justify-content: flex-start;
             align-items: flex-start;
@@ -36,14 +36,14 @@
             position: fixed;
             top: 0;
             left: 0;
-            z-index: 1; /* Posiziona il testo sopra il video */
+            z-index: 1;
         }
 
         .fromaeffimera-text {
             font-family: 'Inter', sans-serif;
             font-weight: 400;
-            font-size: 250pt; /* Dimensione per schermi grandi */
-            color: black !important; /* Colore nero */
+            font-size: 250pt;
+            color: black !important;
             text-transform: uppercase;
             line-height: 250pt; /* Interlinea ridotta solo per desktop */
             white-space: normal;
@@ -53,7 +53,10 @@
         @media (max-width: 1024px) {
             .fromaeffimera-text {
                 font-size: 125pt;
-                line-height: normal;
+                line-height: 100pt;
+                position: absolute;
+                top: 10%;
+                left: 10%;
             }
         }
 
@@ -61,7 +64,10 @@
         @media (max-width: 768px) {
             .fromaeffimera-text {
                 font-size: 90pt;
-                line-height: normal;
+                line-height: 70pt;
+                position: absolute;
+                top: 15%;
+                left: 15%;
             }
             .text-container {
                 padding: 10px;
@@ -80,26 +86,26 @@
             grid-auto-rows: calc(100vw / 3); /* Altezza delle celle quadrata */
             overflow-y: auto;
             overflow-x: hidden;
-            z-index: 2; /* Posiziona la griglia sopra il testo principale */
+            z-index: 2;
             padding: 20px;
             box-sizing: border-box;
         }
 
-        /* Stili delle scritte bianche per la griglia */
+        /* Scritte bianche per la griglia desktop */
         .grid-overlay div {
             display: flex;
             align-items: flex-start;
             justify-content: flex-start;
             padding: 10px;
             color: white;
-            font-family: 'Courier Prime Bold', monospace; /* Bold per desktop */
+            font-family: 'Courier Prime Bold', monospace;
             font-weight: bold;
             hyphens: auto;
             overflow-wrap: break-word;
             text-align: left;
         }
 
-        /* Versione tablet: celle adattive al testo */
+        /* Adattamento della griglia per tablet: celle in colonna singola */
         @media (max-width: 1024px) {
             .grid-overlay {
                 grid-template-columns: 1fr;
@@ -107,12 +113,12 @@
             }
             .grid-overlay div {
                 font-size: 18px;
-                font-family: 'Courier Prime Regular', monospace; /* Regular per tablet */
+                font-family: 'Courier Prime Regular', monospace;
                 font-weight: normal;
             }
         }
 
-        /* Versione smartphone: celle adattive al testo */
+        /* Adattamento della griglia per smartphone: celle in colonna singola */
         @media (max-width: 768px) {
             .grid-overlay {
                 grid-template-columns: 1fr;
@@ -120,7 +126,7 @@
             }
             .grid-overlay div {
                 font-size: 26px;
-                font-family: 'Courier Prime Regular', monospace; /* Regular per smartphone */
+                font-family: 'Courier Prime Regular', monospace;
                 font-weight: normal;
             }
         }
