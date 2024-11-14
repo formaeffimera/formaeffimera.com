@@ -7,6 +7,20 @@
     <link rel="icon" href="img/icon.png" type="image/png">
     <link rel="stylesheet" href="cssfonts/fontstyles.css">
     <style>
+        /* Importa i font Courier Prime Bold e Regular */
+        @font-face {
+            font-family: 'Courier Prime Bold';
+            src: url('fonts/CourierPrime-Bold.ttf') format('truetype');
+            font-weight: bold;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Courier Prime Regular';
+            src: url('fonts/CourierPrime-Regular.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
         /* Stili per il video di sfondo */
         .background-video {
             position: fixed;
@@ -15,14 +29,14 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            z-index: -1; /* Mette il video sotto il contenuto */
+            z-index: -1;
         }
 
         /* Stili per il corpo e il testo principale */
         body {
             margin: 0;
             padding: 0;
-            overflow-x: hidden; /* Evita lo scroll orizzontale */
+            overflow-x: hidden;
             display: flex;
             justify-content: flex-start;
             align-items: flex-start;
@@ -31,13 +45,12 @@
 
         .text-container {
             width: 100%;
-            overflow-wrap: break-word;
             padding: 20px;
             box-sizing: border-box;
             position: fixed;
             top: 0;
             left: 0;
-            z-index: 1; /* Posiziona il testo sopra il video */
+            z-index: 1;
         }
 
         .fromaeffimera-text {
@@ -47,12 +60,14 @@
             color: black !important;
             text-transform: uppercase;
             white-space: normal;
+            line-height: 250pt; /* Interlinea ridotta per la versione desktop */
         }
 
         /* Media Query per schermi medi (tablet) */
         @media (max-width: 1024px) {
             .fromaeffimera-text {
                 font-size: 125pt;
+                line-height: normal;
             }
         }
 
@@ -60,6 +75,7 @@
         @media (max-width: 768px) {
             .fromaeffimera-text {
                 font-size: 90pt;
+                line-height: normal;
             }
             .text-container {
                 padding: 10px;
@@ -74,15 +90,16 @@
             width: 100%;
             height: 100vh;
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            grid-template-rows: repeat(9, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Celle quadrate adattive */
+            grid-auto-rows: minmax(100px, 1fr); /* Celle quadrate adattive */
             overflow-y: auto;
             overflow-x: hidden;
-            z-index: 2; /* Posiziona la griglia sopra il testo principale */
+            z-index: 2;
             padding: 20px;
             box-sizing: border-box;
         }
 
+        /* Scritte bianche per la griglia */
         .grid-overlay div {
             display: flex;
             align-items: flex-start;
@@ -97,22 +114,28 @@
             text-align: left;
         }
 
+        /* Cambia font per schermi medi (tablet) */
+        @media (max-width: 1024px) {
+            .grid-overlay div {
+                font-size: 18px;
+                font-family: 'Courier Prime Regular', monospace;
+                font-weight: normal;
+            }
+        }
+
+        /* Cambia font per schermi piccoli (cellulari) */
+        @media (max-width: 768px) {
+            .grid-overlay div {
+                font-size: 26px;
+                font-family: 'Courier Prime Regular', monospace;
+                font-weight: normal;
+            }
+        }
+
         /* Dimensioni del testo adattive */
         @media (min-width: 1025px) {
             .grid-overlay div {
                 font-size: 10px;
-            }
-        }
-
-        @media (max-width: 1024px) and (min-width: 769px) {
-            .grid-overlay div {
-                font-size: 18px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .grid-overlay div {
-                font-size: 26px;
             }
         }
     </style>
