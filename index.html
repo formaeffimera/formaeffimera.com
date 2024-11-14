@@ -7,7 +7,21 @@
     <link rel="icon" href="img/icon.png" type="image/png">
     <link rel="stylesheet" href="cssfonts/fontstyles.css">
     <style>
-        /* Stili per il video di sfondo */
+        /* Importa i font */
+        @font-face {
+            font-family: 'Courier Prime Bold';
+            src: url('fonts/CourierPrime-Bold.ttf') format('truetype');
+            font-weight: bold;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Courier Prime Regular';
+            src: url('fonts/CourierPrime-Regular.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        /* Video di sfondo */
         .background-video {
             position: fixed;
             top: 0;
@@ -18,7 +32,7 @@
             z-index: -1;
         }
 
-        /* Stili per il corpo e il testo principale */
+        /* Corpo e formattazione principale */
         body {
             margin: 0;
             padding: 0;
@@ -53,7 +67,7 @@
         @media (max-width: 1024px) {
             .fromaeffimera-text {
                 font-size: 125pt;
-                line-height: 100pt;
+                line-height: normal;
                 position: absolute;
                 top: 10%;
                 left: 10%;
@@ -64,7 +78,7 @@
         @media (max-width: 768px) {
             .fromaeffimera-text {
                 font-size: 90pt;
-                line-height: 70pt;
+                line-height: normal;
                 position: absolute;
                 top: 15%;
                 left: 15%;
@@ -74,7 +88,7 @@
             }
         }
 
-        /* Griglia adattiva per desktop */
+        /* Griglia per desktop con celle quadrate */
         .grid-overlay {
             position: relative;
             top: 0;
@@ -83,7 +97,7 @@
             height: 100vh;
             display: grid;
             grid-template-columns: repeat(3, 1fr); /* 3 colonne fisse */
-            grid-auto-rows: calc(100vw / 3); /* Altezza delle celle quadrata */
+            grid-auto-rows: calc(100vw / 3); /* Altezza quadrata */
             overflow-y: auto;
             overflow-x: hidden;
             z-index: 2;
@@ -91,21 +105,20 @@
             box-sizing: border-box;
         }
 
-        /* Scritte bianche per la griglia desktop */
         .grid-overlay div {
             display: flex;
             align-items: flex-start;
             justify-content: flex-start;
             padding: 10px;
             color: white;
-            font-family: 'Courier Prime Bold', monospace;
+            font-family: 'Courier Prime Bold', monospace; /* Bold per desktop */
             font-weight: bold;
             hyphens: auto;
             overflow-wrap: break-word;
             text-align: left;
         }
 
-        /* Adattamento della griglia per tablet: celle in colonna singola */
+        /* Adattamento griglia tablet e smartphone a colonna singola */
         @media (max-width: 1024px) {
             .grid-overlay {
                 grid-template-columns: 1fr;
@@ -118,7 +131,6 @@
             }
         }
 
-        /* Adattamento della griglia per smartphone: celle in colonna singola */
         @media (max-width: 768px) {
             .grid-overlay {
                 grid-template-columns: 1fr;
@@ -139,14 +151,13 @@
         Il tuo browser non supporta il tag video.
     </video>
 
-    <!-- Testo principale che scorre sopra il video -->
+    <!-- Testo principale sopra il video -->
     <div class="text-container">
         <p class="fromaeffimera-text">FORMÆFFIMERA</p>
     </div>
 
     <!-- Griglia sovrapposta -->
     <div class="grid-overlay">
-        <!-- Caselle della griglia con nomi progressivi -->
         <div>doc01<br>documento primo</div>
         <div>doc02<br>documento secondo</div>
         <div>doc03<br>documento terzo</div>
