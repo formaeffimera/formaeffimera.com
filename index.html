@@ -43,30 +43,36 @@
             overflow-x: hidden;
         }
 
-        /* Stili per la scritta "FORMÆFFIMERA" */
+        /* Contenitore per la scritta "FORMÆFFIMERA" */
         .text-container {
             width: 100%;
-            overflow-wrap: break-word;
             padding: 20px;
             box-sizing: border-box;
-            position: relative;
-            z-index: 1;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 0; /* Posiziona il testo sopra il video ma sotto la griglia */
+            text-align: left;
         }
 
+        /* Stili per la scritta "FORMÆFFIMERA" */
         .fromaeffimera-text {
             font-family: 'Inter', sans-serif;
             font-weight: 400;
             font-size: 250pt;
-            color: black !important;
+            color: black;
             text-transform: uppercase;
+            line-height: 1; /* Imposta l'interlinea a singola */
+            margin: 0;
+            padding: 0;
             white-space: normal;
+            overflow-wrap: break-word;
         }
 
         /* Media Query per schermi medi (tablet) */
         @media (max-width: 1024px) {
             .fromaeffimera-text {
                 font-size: 125pt;
-                color: black !important;
             }
         }
 
@@ -74,7 +80,6 @@
         @media (max-width: 768px) {
             .fromaeffimera-text {
                 font-size: 90pt;
-                color: black !important;
             }
             .text-container {
                 padding: 10px;
@@ -93,11 +98,12 @@
             grid-auto-rows: calc(100vw / 3);
             overflow-y: auto;
             overflow-x: hidden;
-            z-index: 2; /* Assicura che le scritte bianche siano sopra il video */
+            z-index: 1; /* Assicura che le scritte bianche siano sopra la scritta "FORMÆFFIMERA" */
             padding: 20px;
             box-sizing: border-box;
         }
 
+        /* Scritte bianche per la griglia desktop */
         .grid-overlay div {
             display: flex;
             align-items: flex-start;
@@ -144,7 +150,7 @@
         Il tuo browser non supporta il tag video.
     </video>
 
-    <!-- Testo principale sopra il video -->
+    <!-- Testo principale sopra il video, sotto la griglia -->
     <div class="text-container">
         <p class="fromaeffimera-text">FORMÆFFIMERA</p>
     </div>
