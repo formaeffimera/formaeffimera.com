@@ -11,3 +11,19 @@
     font-weight: 100 900;
     font-style: italic;
 }
+
+/* Stili per la barra dei social media in basso */
+.social-icons {
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px; /* Distanza tra le icone */
+    z-index: 3; /* Assicura che sia sopra altri contenuti */
+}
+
+.social-icons img {
+    width: 12pt;
+    height: 12pt;
+}
