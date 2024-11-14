@@ -7,14 +7,6 @@
     <link rel="icon" href="img/icon.png" type="image/png">
     <link rel="stylesheet" href="cssfonts/fontstyles.css">
     <style>
-        /* Importa il font Courier Prime Bold */
-        @font-face {
-            font-family: 'Courier Prime Bold';
-            src: url('fonts/CourierPrime-Bold.ttf') format('truetype');
-            font-weight: bold;
-            font-style: normal;
-        }
-
         /* Stili per il video di sfondo */
         .background-video {
             position: fixed;
@@ -26,18 +18,26 @@
             z-index: -1; /* Mette il video sotto il contenuto */
         }
 
-        /* Stili per posizionamento e formattazione del testo principale */
+        /* Stili per il corpo e il testo principale */
         body {
             margin: 0;
             padding: 0;
             overflow-x: hidden; /* Evita lo scroll orizzontale */
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            height: 100vh;
         }
 
         .text-container {
+            width: 100%;
+            overflow-wrap: break-word;
+            padding: 20px;
+            box-sizing: border-box;
             position: fixed;
-            top: 20px;
-            left: 20px;
-            z-index: 0; /* Posiziona il testo sopra il video, ma sotto la griglia */
+            top: 0;
+            left: 0;
+            z-index: 1; /* Posiziona il testo sopra il video */
         }
 
         .fromaeffimera-text {
@@ -49,24 +49,45 @@
             white-space: normal;
         }
 
+        /* Media Query per schermi medi (tablet) */
+        @media (max-width: 1024px) {
+            .fromaeffimera-text {
+                font-size: 125pt;
+            }
+        }
+
+        /* Media Query per schermi piccoli (cellulari) */
+        @media (max-width: 768px) {
+            .fromaeffimera-text {
+                font-size: 90pt;
+            }
+            .text-container {
+                padding: 10px;
+            }
+        }
+
         /* Stili per la griglia */
         .grid-overlay {
-            position: absolute;
+            position: relative;
             top: 0;
             left: 0;
             width: 100%;
-            height: 100%;
+            height: 100vh;
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            grid-template-rows: repeat(3, 1fr);
-            z-index: 1; /* Posiziona la griglia sopra il testo e il video */
+            grid-template-rows: repeat(9, 1fr);
+            overflow-y: auto;
+            overflow-x: hidden;
+            z-index: 2; /* Posiziona la griglia sopra il testo principale */
+            padding: 20px;
+            box-sizing: border-box;
         }
 
         .grid-overlay div {
             display: flex;
             align-items: flex-start;
             justify-content: flex-start;
-            padding: 5px;
+            padding: 10px;
             box-sizing: border-box;
             color: white;
             font-family: 'Courier Prime Bold', monospace;
@@ -79,19 +100,19 @@
         /* Dimensioni del testo adattive */
         @media (min-width: 1025px) {
             .grid-overlay div {
-                font-size: 10px; /* Piccolo su schermi grandi */
+                font-size: 10px;
             }
         }
 
         @media (max-width: 1024px) and (min-width: 769px) {
             .grid-overlay div {
-                font-size: 18px; /* Medio su schermi intermedi */
+                font-size: 18px;
             }
         }
 
         @media (max-width: 768px) {
             .grid-overlay div {
-                font-size: 26px; /* Grande su cellulari */
+                font-size: 26px;
             }
         }
     </style>
@@ -120,6 +141,24 @@
         <div>doc07<br>documento settimo</div>
         <div>doc08<br>documento ottavo</div>
         <div>doc09<br>documento nono</div>
+        <div>doc10<br>documento decimo</div>
+        <div>doc11<br>documento undicesimo</div>
+        <div>doc12<br>documento dodicesimo</div>
+        <div>doc13<br>documento tredicesimo</div>
+        <div>doc14<br>documento quattordicesimo</div>
+        <div>doc15<br>documento quindicesimo</div>
+        <div>doc16<br>documento sedicesimo</div>
+        <div>doc17<br>documento diciassettesimo</div>
+        <div>doc18<br>documento diciottesimo</div>
+        <div>doc19<br>documento diciannovesimo</div>
+        <div>doc20<br>documento ventesimo</div>
+        <div>doc21<br>documento ventunesimo</div>
+        <div>doc22<br>documento ventiduesimo</div>
+        <div>doc23<br>documento ventitreesimo</div>
+        <div>doc24<br>documento ventiquattresimo</div>
+        <div>doc25<br>documento venticinquesimo</div>
+        <div>doc26<br>documento ventiseiesimo</div>
+        <div>doc27<br>documento ventisettesimo</div>
     </div>
 </body>
 </html>
