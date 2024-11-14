@@ -7,6 +7,14 @@
     <link rel="icon" href="img/icon.png" type="image/png">
     <link rel="stylesheet" href="cssfonts/fontstyles.css">
     <style>
+        /* Importa il font Courier Prime Bold */
+        @font-face {
+            font-family: 'Courier Prime Bold';
+            src: url('fonts/CourierPrime-Bold.ttf') format('truetype');
+            font-weight: bold;
+            font-style: normal;
+        }
+
         /* Stili per il video di sfondo */
         .background-video {
             position: fixed;
@@ -49,8 +57,8 @@
             width: 100%;
             height: 100%;
             display: grid;
-            grid-template-columns: repeat(9, 1fr);
-            grid-template-rows: repeat(9, 1fr);
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 1fr);
             z-index: 1; /* Posiziona la griglia sopra il testo e il video */
         }
 
@@ -86,7 +94,6 @@
                 font-size: 26px; /* Grande su cellulari */
             }
         }
-
     </style>
 </head>
 <body>
@@ -113,9 +120,6 @@
         <div>doc07<br>documento settimo</div>
         <div>doc08<br>documento ottavo</div>
         <div>doc09<br>documento nono</div>
-        <!-- Aggiungi altre celle vuote per riempire la griglia -->
-        <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
-        <!-- Continua ad aggiungere div vuoti fino a riempire la griglia 9x9 -->
     </div>
 </body>
 </html>
