@@ -12,18 +12,3 @@
     font-style: italic;
 }
 
-/* Stili per le icone social in basso */
-a img {
-    position: fixed;
-    bottom: 5px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: inline-block;
-    width: 8px; /* Ridimensionamento drastico */
-    height: 8px;
-    margin-right: 3px; /* Spaziatura minima tra le icone */
-    z-index: 9999; /* Forza sopra tutto */
-}
-
-
-
