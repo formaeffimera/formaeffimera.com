@@ -57,7 +57,7 @@
             position: absolute;
             top: 0;
             left: 0;
-            z-index: 0;
+            z-index: 0; /* Posiziona il testo sopra il video ma sotto la griglia */
             text-align: left;
         }
 
@@ -123,15 +123,6 @@
             text-align: left;
         }
 
-        /* Stile per le lettere social con font SocialMedia */
-        .social-icon {
-            font-family: 'SocialMediaFont';
-            font-size: inherit;
-            color: white;
-            text-decoration: none;
-            padding: 0 2px;
-        }
-
         /* Griglia adattiva per tablet e smartphone */
         @media (max-width: 1024px) {
             .grid-overlay {
@@ -156,6 +147,14 @@
                 font-weight: normal;
             }
         }
+
+        /* Stile per lettere social */
+        .social-icon {
+            font-family: 'SocialMediaFont';
+            color: white;
+            text-decoration: none;
+            padding: 0 3px;
+        }
     </style>
 </head>
 <body>
@@ -172,7 +171,7 @@
 
     <!-- Griglia sovrapposta -->
     <div class="grid-overlay">
-        <!-- Prima cella in alto a sinistra con @formaeffimera e lettere social -->
+        <!-- Prima cella con @formaeffimera e lettere social -->
         <div>@formaeffimera<br>
             <a href="https://www.facebook.com/formaeffimera/" target="_blank" class="social-icon">f</a>
             <a href="https://www.instagram.com/formaeffimera/" target="_blank" class="social-icon">i</a>
@@ -184,13 +183,37 @@
             <a href="https://bio.site/formaeffimera" target="_blank" class="social-icon">b</a>
             <a href="https://linktr.ee/formaeffimera" target="_blank" class="social-icon">k</a>
             <a href="https://www.linkedin.com/company/formaeffimera" target="_blank" class="social-icon">n</a>
-            <a href="mailto:info@formaeffimera.com" target="_blank" class="social-icon">e</a>
+            <a href="mailto:info@formaeffimera.com" class="social-icon">e</a>
         </div>
+        
+        <!-- Altre celle della griglia -->
+        <div>doc02<br>documento secondo</div>
+        <div>doc03<br>documento terzo</div>
+        <div>doc04<br>documento quarto</div>
+        <div>doc05<br>documento quinto</div>
+        <div>doc06<br>documento sesto</div>
+        <div>doc07<br>documento settimo</div>
+        <div>doc08<br>documento ottavo</div>
+        <div>doc09<br>documento nono</div>
+        <div>doc10<br>documento decimo</div>
+        <div>doc11<br>documento undicesimo</div>
+        <div>doc12<br>documento dodicesimo</div>
+        <div>doc13<br>documento tredicesimo</div>
+        <div>doc14<br>documento quattordicesimo</div>
+        <div>doc15<br>documento quindicesimo</div>
+        <div>doc16<br>documento sedicesimo</div>
+        <div>doc17<br>documento diciassettesimo</div>
+        <div>doc18<br>documento diciottesimo</div>
+        <div>doc19<br>documento diciannovesimo</div>
+        <div>doc20<br>documento ventesimo</div>
+        <div>doc21<br>documento ventunesimo</div>
+        <div>doc22<br>documento ventiduesimo</div>
+        <div>doc23<br>documento ventitreesimo</div>
+        <div>doc24<br>documento ventiquattresimo</div>
+        <div>doc25<br>documento venticinquesimo</div>
+        <div>doc26<br>documento ventiseiesimo</div>
 
-        <!-- Altri elementi della griglia -->
-        <!-- ... -->
-
-        <!-- Ultima cella in basso a destra con @formaeffimera e lettere social -->
+        <!-- Ultima cella con @formaeffimera e lettere social -->
         <div>@formaeffimera<br>
             <a href="https://www.facebook.com/formaeffimera/" target="_blank" class="social-icon">f</a>
             <a href="https://www.instagram.com/formaeffimera/" target="_blank" class="social-icon">i</a>
@@ -202,7 +225,7 @@
             <a href="https://bio.site/formaeffimera" target="_blank" class="social-icon">b</a>
             <a href="https://linktr.ee/formaeffimera" target="_blank" class="social-icon">k</a>
             <a href="https://www.linkedin.com/company/formaeffimera" target="_blank" class="social-icon">n</a>
-            <a href="mailto:info@formaeffimera.com" target="_blank" class="social-icon">e</a>
+            <a href="mailto:info@formaeffimera.com" class="social-icon">e</a>
         </div>
     </div>
 </body>
