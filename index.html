@@ -57,7 +57,7 @@
             position: absolute;
             top: 0;
             left: 0;
-            z-index: 0; /* Posiziona il testo sopra il video ma sotto la griglia */
+            z-index: 0;
             text-align: left;
         }
 
@@ -68,7 +68,7 @@
             font-size: 250pt;
             color: black;
             text-transform: uppercase;
-            line-height: 1; /* Imposta l'interlinea a singola */
+            line-height: 1;
             margin: 0;
             padding: 0;
             white-space: normal;
@@ -104,7 +104,7 @@
             grid-auto-rows: calc(100vw / 3);
             overflow-y: auto;
             overflow-x: hidden;
-            z-index: 1; /* Assicura che le scritte bianche siano sopra la scritta "FORMÆFFIMERA" */
+            z-index: 1;
             padding: 20px;
             box-sizing: border-box;
         }
@@ -172,6 +172,7 @@
 
     <!-- Griglia sovrapposta -->
     <div class="grid-overlay">
+        <!-- Prima cella in alto a sinistra con @formaeffimera e lettere social -->
         <div>@formaeffimera<br>
             <a href="https://www.facebook.com/formaeffimera/" target="_blank" class="social-icon">f</a>
             <a href="https://www.instagram.com/formaeffimera/" target="_blank" class="social-icon">i</a>
@@ -189,7 +190,7 @@
         <!-- Altri elementi della griglia -->
         <!-- ... -->
 
-        <!-- Sostituzione di doc27 con "@formaeffimera" e lettere social -->
+        <!-- Ultima cella in basso a destra con @formaeffimera e lettere social -->
         <div>@formaeffimera<br>
             <a href="https://www.facebook.com/formaeffimera/" target="_blank" class="social-icon">f</a>
             <a href="https://www.instagram.com/formaeffimera/" target="_blank" class="social-icon">i</a>
