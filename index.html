@@ -57,7 +57,7 @@
             position: absolute;
             top: 0;
             left: 0;
-            z-index: 0;
+            z-index: 0; /* Posiziona il testo sopra il video ma sotto la griglia */
             text-align: left;
         }
 
@@ -121,6 +121,7 @@
             hyphens: auto;
             overflow-wrap: break-word;
             text-align: left;
+            flex-direction: column;
         }
 
         /* Griglia adattiva per tablet e smartphone */
@@ -172,18 +173,21 @@
     <!-- Griglia sovrapposta -->
     <div class="grid-overlay">
         <!-- Prima cella con @formaeffimera e lettere social -->
-        <div>@formaeffimera<br>
-            <a href="https://www.facebook.com/formaeffimera/" target="_blank" class="social-icon">f</a>
-            <a href="https://www.instagram.com/formaeffimera/" target="_blank" class="social-icon">i</a>
-            <a href="https://x.com/formaeffimera" target="_blank" class="social-icon">x</a>
-            <a href="https://www.tiktok.com/@formaeffimera" target="_blank" class="social-icon">t</a>
-            <a href="https://www.threads.net/@formaeffimera" target="_blank" class="social-icon">a</a>
-            <a href="https://www.youtube.com/@formaeffimera" target="_blank" class="social-icon">y</a>
-            <a href="https://vimeo.com/formaeffimera" target="_blank" class="social-icon">v</a>
-            <a href="https://bio.site/formaeffimera" target="_blank" class="social-icon">b</a>
-            <a href="https://linktr.ee/formaeffimera" target="_blank" class="social-icon">k</a>
-            <a href="https://www.linkedin.com/company/formaeffimera" target="_blank" class="social-icon">n</a>
-            <a href="mailto:info@formaeffimera.com" class="social-icon">e</a>
+        <div>
+            <span>@formaeffimera</span>
+            <span>
+                <a href="https://www.facebook.com/formaeffimera/" target="_blank" class="social-icon">f</a>
+                <a href="https://www.instagram.com/formaeffimera/" target="_blank" class="social-icon">i</a>
+                <a href="https://x.com/formaeffimera" target="_blank" class="social-icon">x</a>
+                <a href="https://www.tiktok.com/@formaeffimera" target="_blank" class="social-icon">t</a>
+                <a href="https://www.threads.net/@formaeffimera" target="_blank" class="social-icon">a</a>
+                <a href="https://www.youtube.com/@formaeffimera" target="_blank" class="social-icon">y</a>
+                <a href="https://vimeo.com/formaeffimera" target="_blank" class="social-icon">v</a>
+                <a href="https://bio.site/formaeffimera" target="_blank" class="social-icon">b</a>
+                <a href="https://linktr.ee/formaeffimera" target="_blank" class="social-icon">k</a>
+                <a href="https://www.linkedin.com/company/formaeffimera" target="_blank" class="social-icon">n</a>
+                <a href="mailto:info@formaeffimera.com" class="social-icon">e</a>
+            </span>
         </div>
         
         <!-- Altre celle della griglia -->
@@ -212,20 +216,21 @@
         <div>doc24<br>documento ventiquattresimo</div>
         <div>doc25<br>documento venticinquesimo</div>
         <div>doc26<br>documento ventiseiesimo</div>
-
-        <!-- Ultima cella con @formaeffimera e lettere social -->
-        <div>@formaeffimera<br>
-            <a href="https://www.facebook.com/formaeffimera/" target="_blank" class="social-icon">f</a>
-            <a href="https://www.instagram.com/formaeffimera/" target="_blank" class="social-icon">i</a>
-            <a href="https://x.com/formaeffimera" target="_blank" class="social-icon">x</a>
-            <a href="https://www.tiktok.com/@formaeffimera" target="_blank" class="social-icon">t</a>
-            <a href="https://www.threads.net/@formaeffimera" target="_blank" class="social-icon">a</a>
-            <a href="https://www.youtube.com/@formaeffimera" target="_blank" class="social-icon">y</a>
-            <a href="https://vimeo.com/formaeffimera" target="_blank" class="social-icon">v</a>
-            <a href="https://bio.site/formaeffimera" target="_blank" class="social-icon">b</a>
-            <a href="https://linktr.ee/formaeffimera" target="_blank" class="social-icon">k</a>
-            <a href="https://www.linkedin.com/company/formaeffimera" target="_blank" class="social-icon">n</a>
-            <a href="mailto:info@formaeffimera.com" class="social-icon">e</a>
+        <div>
+            <span>@formaeffimera</span>
+            <span>
+                <a href="https://www.facebook.com/formaeffimera/" target="_blank" class="social-icon">f</a>
+                <a href="https://www.instagram.com/formaeffimera/" target="_blank" class="social-icon">i</a>
+                <a href="https://x.com/formaeffimera" target="_blank" class="social-icon">x</a>
+                <a href="https://www.tiktok.com/@formaeffimera" target="_blank" class="social-icon">t</a>
+                <a href="https://www.threads.net/@formaeffimera" target="_blank" class="social-icon">a</a>
+                <a href="https://www.youtube.com/@formaeffimera" target="_blank" class="social-icon">y</a>
+                <a href="https://vimeo.com/formaeffimera" target="_blank" class="social-icon">v</a>
+                <a href="https://bio.site/formaeffimera" target="_blank" class="social-icon">b</a>
+                <a href="https://linktr.ee/formaeffimera" target="_blank" class="social-icon">k</a>
+                <a href="https://www.linkedin.com/company/formaeffimera" target="_blank" class="social-icon">n</a>
+                <a href="mailto:info@formaeffimera.com" class="social-icon">e</a>
+            </span>
         </div>
     </div>
 </body>
