@@ -1,1 +1,229 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="icon" href="img/icon.png" type="image/png">
+    <link rel="stylesheet" href="cssfonts/fontstyles.css">
+    <style>
+        /* Importa i font */
+        @font-face {
+            font-family: 'Courier Prime Bold';
+            src: url('fonts/CourierPrime-Bold.ttf') format('truetype');
+            font-weight: bold;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Courier Prime Regular';
+            src: url('fonts/CourierPrime-Regular.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'SocialMediaFont';
+            src: url('fonts/SocialMediaFont.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        /* Video di sfondo */
+        .background-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        /* Corpo e impostazione del contenuto */
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Contenitore per la scritta "FORMÆFFIMERA" */
+        .text-container {
+            width: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 0; /* Posiziona il testo sopra il video ma sotto la griglia */
+            text-align: left;
+        }
+
+        /* Stili per la scritta "FORMÆFFIMERA" */
+        .fromaeffimera-text {
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            font-size: 250pt;
+            color: black;
+            text-transform: uppercase;
+            line-height: 1;
+            margin: 0;
+            padding: 0;
+            white-space: normal;
+            overflow-wrap: break-word;
+        }
+
+        /* Media Query per schermi medi (tablet) */
+        @media (max-width: 1024px) {
+            .fromaeffimera-text {
+                font-size: 150pt;
+            }
+        }
+
+        /* Media Query per schermi piccoli (cellulari) */
+        @media (max-width: 768px) {
+            .fromaeffimera-text {
+                font-size: 110pt;
+            }
+            .text-container {
+                padding: 10px;
+            }
+        }
+
+        /* Griglia con celle quadrate per le scritte bianche */
+        .grid-overlay {
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-auto-rows: calc(100vw / 3);
+            overflow-y: auto;
+            overflow-x: hidden;
+            z-index: 1;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        /* Scritte bianche per la griglia desktop */
+        .grid-overlay div {
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+            padding: 10px;
+            color: white;
+            font-family: 'Courier Prime Bold', monospace;
+            font-weight: bold;
+            hyphens: auto;
+            overflow-wrap: break-word;
+            text-align: left;
+            flex-direction: column;
+        }
+
+        /* Griglia adattiva per tablet e smartphone */
+        @media (max-width: 1024px) {
+            .grid-overlay {
+                grid-template-columns: repeat(3, 1fr);
+                grid-auto-rows: auto;
+            }
+            .grid-overlay div {
+                font-size: 18px;
+                font-family: 'Courier Prime Regular', monospace;
+                font-weight: normal;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .grid-overlay {
+                grid-template-columns: repeat(3, 1fr);
+                grid-auto-rows: auto;
+            }
+            .grid-overlay div {
+                font-size: 26px;
+                font-family: 'Courier Prime Regular', monospace;
+                font-weight: normal;
+            }
+        }
+
+        /* Stile per lettere social */
+        .social-icon {
+            font-family: 'SocialMediaFont';
+            color: white;
+            text-decoration: none;
+            padding: 0 3px;
+        }
+
+        /* Stile per æ con il font SocialMediaFont */
+        .social-text {
+            font-family: 'SocialMediaFont';
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- Video di sfondo -->
+    <video autoplay muted loop class="background-video">
+        <source src="video/background-video.mp4" type="video/mp4">
+        Il tuo browser non supporta il tag video.
+    </video>
+
+    <!-- Testo principale sopra il video, sotto la griglia -->
+    <div class="text-container">
+        <p class="fromaeffimera-text">FORMÆFFIMERA</p>
+    </div>
+
+    <!-- Griglia sovrapposta -->
+    <div class="grid-overlay">
+        <!-- Prima cella con æ e lettere social per smartphone, @formaeffimera per desktop/tablet -->
+        <div>
+            <span class="social-text">[</span>
+            <span>
+                <a href="https://www.facebook.com/formaeffimera/" target="_blank" class="social-icon">f</a>
+                <a href="https://www.instagram.com/formaeffimera/" target="_blank" class="social-icon">i</a>
+                <a href="https://x.com/formaeffimera" target="_blank" class="social-icon">x</a>
+                <a href="https://www.tiktok.com/@formaeffimera" target="_blank" class="social-icon">t</a>
+                <a href="https://www.threads.net/@formaeffimera" target="_blank" class="social-icon">a</a>
+                <a href="https://www.youtube.com/@formaeffimera" target="_blank" class="social-icon">y</a>
+                <a href="https://vimeo.com/formaeffimera" target="_blank" class="social-icon">v</a>
+                <a href="https://bio.site/formaeffimera" target="_blank" class="social-icon">b</a>
+                <a href="https://linktr.ee/formaeffimera" target="_blank" class="social-icon">k</a>
+                <a href="https://www.linkedin.com/company/formaeffimera" target="_blank" class="social-icon">n</a>
+                <a href="mailto:info@formaeffimera.com" class="social-icon">e</a>
+            </span>
+        </div>
+        
+        <!-- Altre celle della griglia -->
+        <div>doc02<br>documento secondo</div>
+        <div>doc03<br>documento terzo</div>
+        <div>doc04<br>documento quarto</div>
+        <div>doc05<br>documento quinto</div>
+        <div>doc06<br>documento sesto</div>
+        <div>doc07<br>documento settimo</div>
+        <div>doc08<br>documento ottavo</div>
+        <div>doc09<br>documento nono</div>
+        <div>doc10<br>documento decimo</div>
+        <div>doc11<br>documento undicesimo</div>
+        <div>doc12<br>documento dodicesimo</div>
+        <div>doc13<br>documento tredicesimo</div>
+        <div>doc14<br>documento quattordicesimo</div>
+        <div>doc15<br>documento quindicesimo</div>
+        <div>doc16<br>documento sedicesimo</div>
+        <div>doc17<br>documento diciassettesimo</div>
+        <div>doc18<br>documento diciottesimo</div>
+        <div>doc19<br>documento diciannovesimo</div>
+        <div>doc20<br>documento ventesimo</div>
+        <div>doc21<br>documento ventunesimo</div>
+        <div>doc22<br>documento ventiduesimo</div>
+        <div>doc23<br>documento ventitreesimo</div>
+        <div>doc24<br>documento ventiquattresimo</div>
+        <div>doc25<br>documento venticinquesimo</div>
+        <div>doc26<br>documento ventiseiesimo</div>
+        <div>doc27<br>documento ventisettesimo</div>
+    </div>
+</body>
+</html>
 
