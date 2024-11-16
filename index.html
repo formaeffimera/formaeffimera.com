@@ -75,6 +75,23 @@
             overflow-wrap: break-word;
         }
 
+        /* Media Query per schermi medi (tablet) */
+        @media (max-width: 1024px) {
+            .fromaeffimera-text {
+                font-size: 150pt;
+            }
+        }
+
+        /* Media Query per schermi piccoli (cellulari) */
+        @media (max-width: 768px) {
+            .fromaeffimera-text {
+                font-size: 110pt;
+            }
+            .text-container {
+                padding: 10px;
+            }
+        }
+
         /* Griglia con celle quadrate per le scritte bianche */
         .grid-overlay {
             position: relative;
@@ -107,7 +124,7 @@
             flex-direction: column;
         }
 
-        /* Griglia adattiva per tablet */
+        /* Griglia adattiva per tablet e smartphone */
         @media (max-width: 1024px) {
             .grid-overlay {
                 grid-template-columns: repeat(3, 1fr);
@@ -120,7 +137,6 @@
             }
         }
 
-        /* Griglia adattiva per smartphone */
         @media (max-width: 768px) {
             .grid-overlay {
                 grid-template-columns: repeat(3, 1fr);
@@ -189,6 +205,24 @@
         <div>doc07<br>documento settimo</div>
         <div>doc08<br>documento ottavo</div>
         <div>doc09<br>documento nono</div>
+        <div>doc10<br>documento decimo</div>
+        <div>doc11<br>documento undicesimo</div>
+        <div>doc12<br>documento dodicesimo</div>
+        <div>doc13<br>documento tredicesimo</div>
+        <div>doc14<br>documento quattordicesimo</div>
+        <div>doc15<br>documento quindicesimo</div>
+        <div>doc16<br>documento sedicesimo</div>
+        <div>doc17<br>documento diciassettesimo</div>
+        <div>doc18<br>documento diciottesimo</div>
+        <div>doc19<br>documento diciannovesimo</div>
+        <div>doc20<br>documento ventesimo</div>
+        <div>doc21<br>documento ventunesimo</div>
+        <div>doc22<br>documento ventiduesimo</div>
+        <div>doc23<br>documento ventitreesimo</div>
+        <div>doc24<br>documento ventiquattresimo</div>
+        <div>doc25<br>documento venticinquesimo</div>
+        <div>doc26<br>documento ventiseiesimo</div>
+        <div>doc27<br>documento ventisettesimo</div>
     </div>
 
     <script>
