@@ -127,11 +127,6 @@
             .text-container {
                 padding: 10px;
             }
-            .grid-overlay div {
-                font-size: 26px;
-                font-family: 'Courier Prime Regular', monospace;
-                font-weight: normal;
-            }
         }
 
         /* Stile per lettere social */
@@ -164,7 +159,7 @@
     <div class="grid-overlay">
         <!-- Prima cella con contenuto modificabile -->
         <div id="social-text-container">
-            <span class="social-text">[</span>
+            <span class="social-text" id="replaceable-character">[</span>
             <span>
                 <a href="https://www.facebook.com/formaeffimera/" target="_blank" class="social-icon">f</a>
                 <a href="https://www.instagram.com/formaeffimera/" target="_blank" class="social-icon">i</a>
@@ -179,7 +174,8 @@
                 <a href="mailto:info@formaeffimera.com" class="social-icon">e</a>
             </span>
         </div>
-        <!-- Altre celle della griglia -->
+        
+        <!-- Altre celle -->
         <div>doc02<br>documento secondo</div>
         <div>doc03<br>documento terzo</div>
         <div>doc04<br>documento quarto</div>
@@ -211,11 +207,11 @@
     <script>
         // Funzione per sostituire il carattere in base alla larghezza dello schermo
         function updateSocialText() {
-            const socialText = document.querySelector('#social-text-container .social-text');
+            const replaceableCharacter = document.getElementById('replaceable-character');
             if (window.innerWidth <= 768) {
-                socialText.textContent = 'æ'; // Sostituzione per smartphone
+                replaceableCharacter.textContent = 'æ'; // Sostituzione per smartphone
             } else {
-                socialText.textContent = '['; // Contenuto per desktop/tablet
+                replaceableCharacter.textContent = '['; // Contenuto per desktop/tablet
             }
         }
 
