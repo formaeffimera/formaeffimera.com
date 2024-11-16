@@ -90,6 +90,10 @@
             .text-container {
                 padding: 10px;
             }
+            /* Cambia il contenuto del carattere per smartphone */
+            .social-text::before {
+                content: "æ";
+            }
         }
 
         /* Griglia con celle quadrate per le scritte bianche */
@@ -157,7 +161,7 @@
             padding: 0 3px;
         }
 
-        /* Stile per æ con il font SocialMediaFont */
+        /* Stile per [ con il font SocialMediaFont */
         .social-text {
             font-family: 'SocialMediaFont';
             color: white;
@@ -178,7 +182,7 @@
 
     <!-- Griglia sovrapposta -->
     <div class="grid-overlay">
-        <!-- Prima cella con æ e lettere social per smartphone, @formaeffimera per desktop/tablet -->
+        <!-- Prima cella con [ per desktop/tablet, æ per smartphone -->
         <div>
             <span class="social-text">[</span>
             <span>
@@ -226,4 +230,3 @@
     </div>
 </body>
 </html>
-
