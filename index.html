@@ -107,10 +107,11 @@
             flex-direction: column;
         }
 
-        /* Media Query per tablet */
+        /* Griglia adattiva per tablet */
         @media (max-width: 1024px) {
-            .fromaeffimera-text {
-                font-size: 150pt;
+            .grid-overlay {
+                grid-template-columns: repeat(3, 1fr);
+                grid-auto-rows: auto;
             }
             .grid-overlay div {
                 font-size: 18px;
@@ -119,13 +120,16 @@
             }
         }
 
-        /* Media Query per smartphone */
+        /* Griglia adattiva per smartphone */
         @media (max-width: 768px) {
-            .fromaeffimera-text {
-                font-size: 110pt;
+            .grid-overlay {
+                grid-template-columns: repeat(3, 1fr);
+                grid-auto-rows: auto;
             }
-            .text-container {
-                padding: 10px;
+            .grid-overlay div {
+                font-size: 26px;
+                font-family: 'Courier Prime Regular', monospace;
+                font-weight: normal;
             }
         }
 
@@ -137,6 +141,7 @@
             padding: 0 3px;
         }
 
+        /* Stile per il carattere sostituibile */
         .social-text {
             font-family: 'SocialMediaFont';
             color: white;
@@ -158,7 +163,7 @@
     <!-- Griglia sovrapposta -->
     <div class="grid-overlay">
         <!-- Prima cella con contenuto modificabile -->
-        <div id="social-text-container">
+        <div>
             <span class="social-text" id="replaceable-character">[</span>
             <span>
                 <a href="https://www.facebook.com/formaeffimera/" target="_blank" class="social-icon">f</a>
@@ -184,24 +189,6 @@
         <div>doc07<br>documento settimo</div>
         <div>doc08<br>documento ottavo</div>
         <div>doc09<br>documento nono</div>
-        <div>doc10<br>documento decimo</div>
-        <div>doc11<br>documento undicesimo</div>
-        <div>doc12<br>documento dodicesimo</div>
-        <div>doc13<br>documento tredicesimo</div>
-        <div>doc14<br>documento quattordicesimo</div>
-        <div>doc15<br>documento quindicesimo</div>
-        <div>doc16<br>documento sedicesimo</div>
-        <div>doc17<br>documento diciassettesimo</div>
-        <div>doc18<br>documento diciottesimo</div>
-        <div>doc19<br>documento diciannovesimo</div>
-        <div>doc20<br>documento ventesimo</div>
-        <div>doc21<br>documento ventunesimo</div>
-        <div>doc22<br>documento ventiduesimo</div>
-        <div>doc23<br>documento ventitreesimo</div>
-        <div>doc24<br>documento ventiquattresimo</div>
-        <div>doc25<br>documento venticinquesimo</div>
-        <div>doc26<br>documento ventiseiesimo</div>
-        <div>doc27<br>documento ventisettesimo</div>
     </div>
 
     <script>
