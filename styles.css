@@ -1,11 +1,4 @@
-/* Definizione dei font */
-@font-face {
-    font-family: 'Courier Prime Regular';
-    src: url('/fonts/CourierPrime-Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-
+/* Importa i font */
 @font-face {
     font-family: 'Courier Prime Bold';
     src: url('/fonts/CourierPrime-Bold.ttf') format('truetype');
@@ -14,59 +7,153 @@
 }
 
 @font-face {
-    font-family: 'Inter';
-    src: url('/fonts/Inter-VariableFont_opsz,wght.ttf') format('truetype');
-    font-weight: 100 900;
+    font-family: 'Courier Prime Regular';
+    src: url('/fonts/CourierPrime-Regular.ttf') format('truetype');
+    font-weight: normal;
     font-style: normal;
-    font-optical-sizing: auto;
 }
 
 @font-face {
-    font-family: 'Inter';
-    src: url('/fonts/Inter-Italic-VariableFont_opsz,wght.ttf') format('truetype');
-    font-weight: 100 900;
-    font-style: italic;
-    font-optical-sizing: auto;
+    font-family: 'SocialMediaFont';
+    src: url('/fonts/SocialMediaFont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }
 
-/* Stili per gli elementi */
+/* Video di sfondo */
+.background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+/* Corpo e impostazione del contenuto */
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Contenitore per la scritta "FORMÆFFIMERA" */
+.text-container {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0; /* Posiziona il testo sopra il video ma sotto la griglia */
+    text-align: left;
+}
+
+/* Stili per la scritta "FORMÆFFIMERA" */
 .fromaeffimera-text {
     font-family: 'Inter', sans-serif;
     font-weight: 400;
-    font-style: normal;
-    font-size: 100pt;
+    font-size: 250pt;
     color: black;
     text-transform: uppercase;
-    margin: 20px;
-    line-height: 1.2;
-    transition: font-size 0.3s ease, line-height 0.3s ease;
-}
-
-.courier-text {
-    font-family: 'Courier Prime Regular', monospace;
-    font-weight: normal;
-    font-size: 100pt;
-    color: white;
-    margin: 20px;
-    line-height: 1.2;
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+    white-space: normal;
     overflow-wrap: break-word;
-    word-break: break-word;
-    transition: font-size 0.3s ease, line-height 0.3s ease;
 }
 
-/* Media Query per tablet */
+/* Media Query per schermi medi (tablet) */
 @media (max-width: 1024px) {
-    .fromaeffimera-text,
-    .courier-text {
-        font-size: 70pt;
+    .fromaeffimera-text {
+        font-size: 150pt;
     }
 }
 
-/* Media Query per smartphone */
+/* Media Query per schermi piccoli (cellulari) */
 @media (max-width: 768px) {
-    .fromaeffimera-text,
-    .courier-text {
-        font-size: 50pt;
-        margin: 10px;
+    .fromaeffimera-text {
+        font-size: 110pt;
     }
+    .text-container {
+        padding: 10px;
+    }
+}
+
+/* Griglia con celle quadrate per le scritte bianche */
+.grid-overlay {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: calc(100vw / 3);
+    overflow-y: auto;
+    overflow-x: hidden;
+    z-index: 1;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Scritte bianche per la griglia desktop */
+.grid-overlay div {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 10px;
+    color: white;
+    font-family: 'Courier Prime Bold', monospace;
+    font-weight: bold;
+    hyphens: auto; /* Abilita la sillabazione automatica */
+    overflow-wrap: break-word; /* Consente la rottura delle parole */
+    word-break: break-all; /* Forza la rottura delle parole */
+    text-align: left;
+    flex-direction: column;
+}
+
+/* Griglia adattiva per tablet */
+@media (max-width: 1024px) {
+    .grid-overlay {
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: auto;
+    }
+    .grid-overlay div {
+        font-size: 18px;
+        font-family: 'Courier Prime Regular', monospace;
+        font-weight: normal;
+    }
+}
+
+/* Griglia adattiva per smartphone */
+@media (max-width: 768px) {
+    .grid-overlay {
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: auto;
+    }
+    .grid-overlay div {
+        font-size: 26px;
+        font-family: 'Courier Prime Regular', monospace;
+        font-weight: normal;
+    }
+}
+
+/* Stile per lettere social */
+.social-icon {
+    font-family: 'SocialMediaFont';
+    color: white;
+    text-decoration: none;
+    padding: 0 3px;
+}
+
+/* Stile per il carattere sostituibile */
+.social-text {
+    font-family: 'SocialMediaFont';
+    color: white;
 }
