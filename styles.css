@@ -1,3 +1,4 @@
+/* Definizione dei font */
 @font-face {
     font-family: 'Courier Prime Regular';
     src: url('/fonts/CourierPrime-Regular.ttf') format('truetype');
@@ -12,31 +13,60 @@
     font-style: normal;
 }
 
-.courier-text {
-    font-family: 'Courier Prime Regular', monospace; /* Applica Courier */
-    font-weight: normal; /* Peso normale */
-    font-size: 100pt; /* Dimensione di base */
-    color: white; /* Testo bianco */
+@font-face {
+    font-family: 'Inter';
+    src: url('/fonts/Inter-VariableFont_opsz,wght.ttf') format('truetype');
+    font-weight: 100 900;
+    font-style: normal;
+    font-optical-sizing: auto;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('/fonts/Inter-Italic-VariableFont_opsz,wght.ttf') format('truetype');
+    font-weight: 100 900;
+    font-style: italic;
+    font-optical-sizing: auto;
+}
+
+/* Stili per gli elementi */
+.fromaeffimera-text {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 100pt;
+    color: black;
+    text-transform: uppercase;
     margin: 20px;
-    line-height: 1.2; /* Migliora leggibilità */
-    overflow-wrap: break-word; /* Permette di andare a capo */
-    word-break: break-word; /* Forza la divisione delle parole */
-    text-align: left; /* Allineamento del testo */
-    text-transform: none; /* Mantiene il testo così com'è */
-    transition: font-size 0.3s ease, line-height 0.3s ease; /* Transizioni fluide */
+    line-height: 1.2;
+    transition: font-size 0.3s ease, line-height 0.3s ease;
+}
+
+.courier-text {
+    font-family: 'Courier Prime Regular', monospace;
+    font-weight: normal;
+    font-size: 100pt;
+    color: white;
+    margin: 20px;
+    line-height: 1.2;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    transition: font-size 0.3s ease, line-height 0.3s ease;
 }
 
 /* Media Query per tablet */
 @media (max-width: 1024px) {
+    .fromaeffimera-text,
     .courier-text {
-        font-size: 70pt; /* Riduce dimensione per schermi medi */
+        font-size: 70pt;
     }
 }
 
 /* Media Query per smartphone */
 @media (max-width: 768px) {
+    .fromaeffimera-text,
     .courier-text {
-        font-size: 50pt; /* Riduce dimensione per schermi piccoli */
-        margin: 10px; /* Riduce i margini */
+        font-size: 50pt;
+        margin: 10px;
     }
 }
