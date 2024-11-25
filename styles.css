@@ -1,14 +1,42 @@
 @font-face {
-    font-family: 'Inter';
-    src: url('fonts/Inter-VariableFont_opsz,wght.ttf') format('truetype-variations');
-    font-weight: 100 900;
+    font-family: 'Courier Prime Regular';
+    src: url('/fonts/CourierPrime-Regular.ttf') format('truetype');
+    font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'Inter';
-    src: url('fonts/Inter-Italic-VariableFont_opsz,wght.ttf') format('truetype-variations');
-    font-weight: 100 900;
-    font-style: italic;
+    font-family: 'Courier Prime Bold';
+    src: url('/fonts/CourierPrime-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
 }
 
+.courier-text {
+    font-family: 'Courier Prime Regular', monospace; /* Applica Courier */
+    font-weight: normal; /* Peso normale */
+    font-size: 100pt; /* Dimensione di base */
+    color: white; /* Testo bianco */
+    margin: 20px;
+    line-height: 1.2; /* Migliora leggibilità */
+    overflow-wrap: break-word; /* Permette di andare a capo */
+    word-break: break-word; /* Forza la divisione delle parole */
+    text-align: left; /* Allineamento del testo */
+    text-transform: none; /* Mantiene il testo così com'è */
+    transition: font-size 0.3s ease, line-height 0.3s ease; /* Transizioni fluide */
+}
+
+/* Media Query per tablet */
+@media (max-width: 1024px) {
+    .courier-text {
+        font-size: 70pt; /* Riduce dimensione per schermi medi */
+    }
+}
+
+/* Media Query per smartphone */
+@media (max-width: 768px) {
+    .courier-text {
+        font-size: 50pt; /* Riduce dimensione per schermi piccoli */
+        margin: 10px; /* Riduce i margini */
+    }
+}
