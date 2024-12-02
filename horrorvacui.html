@@ -25,13 +25,14 @@
         /* Contenitore dello scorrimento */
         .scroll-container {
             display: flex; /* Dispone gli elementi in fila */
-            width: max-content; /* Larghezza dinamica per adattarsi agli elementi */
+            width: calc(100vw * 3); /* 3 copie, ciascuna larga come lo schermo */
             animation: scroll-left 10s linear infinite; /* Movimento continuo */
         }
 
         /* Immagine SVG */
         .scrolling-image {
             height: 100vh; /* Adatta l'altezza dello schermo */
+            width: 100vw; /* Ogni immagine è larga quanto lo schermo */
             flex-shrink: 0; /* Impedisce il ridimensionamento */
         }
 
@@ -49,7 +50,6 @@
 <body>
     <div class="scroll-container">
         <!-- Copie consecutive dell'immagine SVG -->
-        <img src="https://formaeffimera.com/svg/HR.svg" alt="Horror Vacui Graphic" class="scrolling-image">
         <img src="https://formaeffimera.com/svg/HR.svg" alt="Horror Vacui Graphic" class="scrolling-image">
         <img src="https://formaeffimera.com/svg/HR.svg" alt="Horror Vacui Graphic" class="scrolling-image">
         <img src="https://formaeffimera.com/svg/HR.svg" alt="Horror Vacui Graphic" class="scrolling-image">
