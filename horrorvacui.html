@@ -20,6 +20,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            touch-action: manipulation; /* Evita zoom su sfondo */
         }
 
         /* Sfondo animato */
@@ -28,15 +29,17 @@
             top: 0;
             left: 0;
             width: 100vw; /* Larghezza dello schermo */
-            height: 100vh; /* Altezza dello schermo */
+            height: 100
+vh; /* Altezza dello schermo */
             overflow: hidden; /* Evita spazi extra */
             z-index: -1; /* Dietro a tutto il contenuto */
+            pointer-events: none; /* Disabilita interazione con lo sfondo */
         }
 
         /* Contenitore dello scorrimento */
         .scroll-container {
             display: flex;
-            width: 200%; /* Doppio dello schermo per continuità */
+            width: calc(100vw * 6); /* 6 copie per garantire continuità infinita */
             height: 100%; /* Altezza bloccata */
             animation: scroll-left 10s linear infinite; /* Movimento continuo */
         }
@@ -54,22 +57,24 @@
                 transform: translateX(0); /* Partenza */
             }
             100% {
-                transform: translateX(-50%); /* Metà del contenitore */
+                transform: translateX(-300vw); /* Scorre di 3 schermi per ciclo */
             }
         }
 
-        /* Contenuto aggiuntivo (non influenzato dall'animazione) */
+        /* Contenuto aggiuntivo */
         .content {
             position: relative;
             z-index: 1; /* Sopra l'animazione */
             color: white;
             text-align: center;
+            font-family: Arial, sans-serif;
+            padding: 20px;
         }
 
-        /* Blocca lo zoom sullo sfondo su dispositivi mobili */
+        /* Blocco dello zoom sullo sfondo su dispositivi mobili */
         @media (max-width: 768px) {
             body {
-                touch-action: manipulation; /* Previene zoom su sfondo */
+                touch-action: manipulation; /* Blocca pinch-to-zoom sullo sfondo */
             }
         }
     </style>
@@ -79,6 +84,32 @@
     <div class="background-animation">
         <div class="scroll-container">
             <!-- Duplica le immagini SVG per continuità infinita -->
+            <img src="https://formaeffimera.com/svg/HR.svg" alt="Horror Vacui Graphic" class="scrolling-image">
+            <img src="https://formaeffimera.com/svg/HR.svg" alt="Horror Vacui Graphic" class="scrolling-image">
+            <img src="https://formaeffimera.com/svg/HR.svg" alt="Horror Vacui Graphic" class="scrolling-image">
+            <img src="https://formaeffimera.com/svg/HR.svg" alt="Horror Vacui Graphic" class="scrolling-image">
+            <img src="https://formaeffimera.com/svg/HR.svg" alt="Horror Vacui Graphic" class="scrolling-image">
+            <img src="https://formaeffimera.com/svg/HR.svg" alt="Horror Vacui Graphic" class="scrolling-image">
+            <img src="https://formaeffimera.com/svg/HR.svg" alt="Horror Vacui Graphic" class="scrolling-image">
+            <img src="https://formaeffimera.com/svg/HR.svg" alt="Horror Vacui Graphic" class="scrolling-image">
+            <img src="https://formaeffimera.com/svg/HR.svg" alt="Horror Vacui Graphic" class="scrolling-image">
+            <img src="https://formaeffimera.com/svg/HR.svg" alt="Horror Vacui Graphic" class="scrolling-image">
+            <img src="https://formaeffimera.com/svg/HR.svg" alt="Horror Vacui Graphic" class="scrolling-image">
+            <img src="https://formaeffimera.com/svg/HR.svg" alt="Horror Vacui Graphic" class="scrolling-image">
+            <img src="https://formaeffimera.com/svg/HR.svg" alt="Horror Vacui Graphic" class="scrolling-image">
+            <img src="https://formaeffimera.com/svg/HR.svg" alt="Horror Vacui Graphic" class="scrolling-image">
+            <img src="https://formaeffimera.com/svg/HR.svg" alt="Horror Vacui Graphic" class="scrolling-image">
+            <img src="https://formaeffimera.com/svg/HR.svg" alt="Horror Vacui Graphic" class="scrolling-image">
+            <img src="https://formaeffimera.com/svg/HR.svg" alt="Horror Vacui Graphic" class="scrolling-image">
+            <img src="https://formaeffimera.com/svg/HR.svg" alt="Horror Vacui Graphic" class="scrolling-image">
+            <img src="https://formaeffimera.com/svg/HR.svg" alt="Horror Vacui Graphic" class="scrolling-image">
+            <img src="https://formaeffimera.com/svg/HR.svg" alt="Horror Vacui Graphic" class="scrolling-image">
+            <img src="https://formaeffimera.com/svg/HR.svg" alt="Horror Vacui Graphic" class="scrolling-image">
+            <img src="https://formaeffimera.com/svg/HR.svg" alt="Horror Vacui Graphic" class="scrolling-image">
+            <img src="https://formaeffimera.com/svg/HR.svg" alt="Horror Vacui Graphic" class="scrolling-image">
+            <img src="https://formaeffimera.com/svg/HR.svg" alt="Horror Vacui Graphic" class="scrolling-image">
+            <img src="https://formaeffimera.com/svg/HR.svg" alt="Horror Vacui Graphic" class="scrolling-image">
+            <img src="https://formaeffimera.com/svg/HR.svg" alt="Horror Vacui Graphic" class="scrolling-image">
             <img src="https://formaeffimera.com/svg/HR.svg" alt="Horror Vacui Graphic" class="scrolling-image">
             <img src="https://formaeffimera.com/svg/HR.svg" alt="Horror Vacui Graphic" class="scrolling-image">
             <img src="https://formaeffimera.com/svg/HR.svg" alt="Horror Vacui Graphic" class="scrolling-image">
