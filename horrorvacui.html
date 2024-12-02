@@ -14,8 +14,8 @@
 
         /* Imposta il corpo della pagina */
         body {
-            height: 100vh; /* Occupa tutta l'altezza dello schermo */
-            overflow: hidden; /* Impedisce lo scrolling verticale */
+            height: 100vh; /* Altezza fissa dello schermo */
+            overflow: hidden; /* Impedisce scrolling */
             background-color: black; /* Sfondo nero */
             display: flex;
             justify-content: center;
@@ -25,15 +25,18 @@
         /* Contenitore dello scorrimento */
         .scroll-container {
             display: flex; /* Dispone gli elementi in fila */
-            width: calc(100vw * 3); /* 3 copie, ciascuna larga come lo schermo */
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100vh; /* Altezza bloccata allo schermo */
             animation: scroll-left 10s linear infinite; /* Movimento continuo */
         }
 
         /* Immagine SVG */
         .scrolling-image {
-            height: 100vh; /* Adatta l'altezza dello schermo */
-            width: 100vw; /* Ogni immagine è larga quanto lo schermo */
-            flex-shrink: 0; /* Impedisce il ridimensionamento */
+            height: 100%; /* Adatta l'altezza allo schermo */
+            width: auto; /* Mantiene la proporzione naturale del file */
+            flex-shrink: 0; /* Impedisce ridimensionamento */
         }
 
         /* Animazione dello scorrimento */
@@ -42,7 +45,17 @@
                 transform: translateX(0); /* Inizia dalla posizione originale */
             }
             100% {
-                transform: translateX(-100vw); /* Scorre esattamente una larghezza dello schermo */
+                transform: translateX(-100%); /* Scorre di una larghezza del contenitore */
+            }
+        }
+
+        /* Specifiche per dispositivi mobili */
+        @media (max-width: 768px) {
+            .scroll-container {
+                height: 100vh; /* Altezza sempre bloccata */
+            }
+            .scrolling-image {
+                height: 100%; /* Scritta bloccata rispetto all'altezza dello schermo */
             }
         }
     </style>
