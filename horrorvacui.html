@@ -31,13 +31,15 @@
             height: 100vh; /* Altezza dello schermo */
             overflow: hidden; /* Evita spazi extra */
             z-index: -1; /* Dietro a tutto il contenuto */
-            pointer-events: none; /* Disabilita interazione con lo sfondo */
         }
 
         /* Contenitore dello scorrimento */
         .scroll-container {
             display: flex;
-            width: calc(100vw * 6); /* 6 copie per garantire continuità infinita */
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: calc(100vw * 3); /* Larghezza calcolata dinamicamente */
             height: 100%; /* Altezza bloccata */
             animation: scroll-left 10s linear infinite; /* Movimento continuo */
         }
@@ -55,11 +57,11 @@
                 transform: translateX(0); /* Partenza */
             }
             100% {
-                transform: translateX(-300vw); /* Scorre di 3 schermi per ciclo */
+                transform: translateX(-100vw); /* Scorre una larghezza dello schermo */
             }
         }
 
-        /* Contenuto aggiuntivo (non influenzato dall'animazione) */
+        /* Contenuto aggiuntivo */
         .content {
             position: relative;
             z-index: 1; /* Sopra l'animazione */
@@ -82,9 +84,6 @@
     <div class="background-animation">
         <div class="scroll-container">
             <!-- Duplica le immagini SVG per continuità infinita -->
-            <img src="https://formaeffimera.com/svg/HR.svg" alt="Horror Vacui Graphic" class="scrolling-image">
-            <img src="https://formaeffimera.com/svg/HR.svg" alt="Horror Vacui Graphic" class="scrolling-image">
-            <img src="https://formaeffimera.com/svg/HR.svg" alt="Horror Vacui Graphic" class="scrolling-image">
             <img src="https://formaeffimera.com/svg/HR.svg" alt="Horror Vacui Graphic" class="scrolling-image">
             <img src="https://formaeffimera.com/svg/HR.svg" alt="Horror Vacui Graphic" class="scrolling-image">
             <img src="https://formaeffimera.com/svg/HR.svg" alt="Horror Vacui Graphic" class="scrolling-image">
