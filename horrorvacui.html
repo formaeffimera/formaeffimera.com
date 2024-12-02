@@ -16,7 +16,7 @@
         body {
             height: 100vh; /* Occupa tutta l'altezza dello schermo */
             overflow: hidden; /* Impedisce lo scrolling verticale */
-            background-color: black; /* Colore di sfondo */
+            background-color: black; /* Sfondo nero */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -24,16 +24,14 @@
 
         /* Contenitore dello scorrimento */
         .scroll-container {
-            position: relative;
-            height: 100%; /* Adatta l'altezza al viewport */
-            width: 300%; /* Larghezza sufficiente per il looping */
-            display: flex;
-            overflow: hidden;
+            display: flex; /* Dispone gli elementi in fila */
+            width: max-content; /* Larghezza dinamica per adattarsi agli elementi */
+            animation: scroll-left 10s linear infinite; /* Movimento continuo */
         }
 
         /* Immagine SVG */
         .scrolling-image {
-            height: 100%; /* Si adatta all'altezza dello schermo */
+            height: 100vh; /* Adatta l'altezza dello schermo */
             flex-shrink: 0; /* Impedisce il ridimensionamento */
         }
 
@@ -43,23 +41,17 @@
                 transform: translateX(0); /* Inizia dalla posizione originale */
             }
             100% {
-                transform: translateX(-100%); /* Scorre verso sinistra */
+                transform: translateX(-100vw); /* Scorre esattamente una larghezza dello schermo */
             }
-        }
-
-        /* Applica l'animazione */
-        .scroll-container {
-            animation: scroll-left 10s linear infinite; /* Scorrimento continuo */
         }
     </style>
 </head>
 <body>
     <div class="scroll-container">
-        <!-- Prima copia dell'immagine SVG -->
+        <!-- Copie consecutive dell'immagine SVG -->
         <img src="https://formaeffimera.com/svg/HR.svg" alt="Horror Vacui Graphic" class="scrolling-image">
-        <!-- Seconda copia dell'immagine SVG per continuità -->
         <img src="https://formaeffimera.com/svg/HR.svg" alt="Horror Vacui Graphic" class="scrolling-image">
-        <!-- Terza copia dell'immagine SVG per continuità infinita -->
+        <img src="https://formaeffimera.com/svg/HR.svg" alt="Horror Vacui Graphic" class="scrolling-image">
         <img src="https://formaeffimera.com/svg/HR.svg" alt="Horror Vacui Graphic" class="scrolling-image">
     </div>
 </body>
