@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horror Vacui</title>
+    <!-- Inserimento di un riferimento a un CSS globale -->
+    <link rel="stylesheet" href="/global/styles.css">
+    <style>
+        /* Resetta margini e padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Imposta il corpo della pagina */
+        body {
+            height: 100vh; /* Occupa tutta l'altezza dello schermo */
+            overflow: hidden; /* Impedisce lo scrolling verticale */
+            background-color: black; /* Puoi cambiare il colore dello sfondo */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Contenitore dello scorrimento */
+        .scroll-container {
+            position: relative;
+            height: 100%; /* Adatta l'altezza al viewport */
+            width: 200%; /* Larghezza doppia per permettere lo scorrimento */
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+        }
+
+        /* Immagine SVG */
+        .scrolling-image {
+            position: absolute;
+            height: 100%; /* Si adatta all'altezza dello schermo */
+            animation: scroll-left 10s linear infinite; /* Movimento continuo */
+        }
+
+        /* Animazione per lo scorrimento */
+        @keyframes scroll-left {
+            0% {
+                transform: translateX(100%); /* Inizia fuori dallo schermo a destra */
+            }
+            100% {
+                transform: translateX(-100%); /* Finisce fuori dallo schermo a sinistra */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="scroll-container">
+        <!-- Prima copia dell'immagine SVG -->
+        <img src="/global/svg/HR.svg" alt="Horror Vacui Graphic" class="scrolling-image">
+        <!-- Seconda copia dell'immagine SVG per continuità -->
+        <img src="/global/svg/HR.svg" alt="Horror Vacui Graphic" class="scrolling-image">
+    </div>
+</body>
+</html>
