@@ -20,7 +20,6 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            touch-action: manipulation; /* Evita zoom su sfondo */
         }
 
         /* Sfondo animato */
@@ -29,8 +28,7 @@
             top: 0;
             left: 0;
             width: 100vw; /* Larghezza dello schermo */
-            height: 100
-vh; /* Altezza dello schermo */
+            height: 100vh; /* Altezza dello schermo */
             overflow: hidden; /* Evita spazi extra */
             z-index: -1; /* Dietro a tutto il contenuto */
             pointer-events: none; /* Disabilita interazione con lo sfondo */
@@ -61,7 +59,7 @@ vh; /* Altezza dello schermo */
             }
         }
 
-        /* Contenuto aggiuntivo */
+        /* Contenuto aggiuntivo (non influenzato dall'animazione) */
         .content {
             position: relative;
             z-index: 1; /* Sopra l'animazione */
@@ -71,10 +69,10 @@ vh; /* Altezza dello schermo */
             padding: 20px;
         }
 
-        /* Blocco dello zoom sullo sfondo su dispositivi mobili */
+        /* Blocca lo zoom sullo sfondo su dispositivi mobili */
         @media (max-width: 768px) {
             body {
-                touch-action: manipulation; /* Blocca pinch-to-zoom sullo sfondo */
+                touch-action: manipulation; /* Previene zoom sullo sfondo */
             }
         }
     </style>
@@ -84,30 +82,6 @@ vh; /* Altezza dello schermo */
     <div class="background-animation">
         <div class="scroll-container">
             <!-- Duplica le immagini SVG per continuità infinita -->
-            <img src="https://formaeffimera.com/svg/HR.svg" alt="Horror Vacui Graphic" class="scrolling-image">
-            <img src="https://formaeffimera.com/svg/HR.svg" alt="Horror Vacui Graphic" class="scrolling-image">
-            <img src="https://formaeffimera.com/svg/HR.svg" alt="Horror Vacui Graphic" class="scrolling-image">
-            <img src="https://formaeffimera.com/svg/HR.svg" alt="Horror Vacui Graphic" class="scrolling-image">
-            <img src="https://formaeffimera.com/svg/HR.svg" alt="Horror Vacui Graphic" class="scrolling-image">
-            <img src="https://formaeffimera.com/svg/HR.svg" alt="Horror Vacui Graphic" class="scrolling-image">
-            <img src="https://formaeffimera.com/svg/HR.svg" alt="Horror Vacui Graphic" class="scrolling-image">
-            <img src="https://formaeffimera.com/svg/HR.svg" alt="Horror Vacui Graphic" class="scrolling-image">
-            <img src="https://formaeffimera.com/svg/HR.svg" alt="Horror Vacui Graphic" class="scrolling-image">
-            <img src="https://formaeffimera.com/svg/HR.svg" alt="Horror Vacui Graphic" class="scrolling-image">
-            <img src="https://formaeffimera.com/svg/HR.svg" alt="Horror Vacui Graphic" class="scrolling-image">
-            <img src="https://formaeffimera.com/svg/HR.svg" alt="Horror Vacui Graphic" class="scrolling-image">
-            <img src="https://formaeffimera.com/svg/HR.svg" alt="Horror Vacui Graphic" class="scrolling-image">
-            <img src="https://formaeffimera.com/svg/HR.svg" alt="Horror Vacui Graphic" class="scrolling-image">
-            <img src="https://formaeffimera.com/svg/HR.svg" alt="Horror Vacui Graphic" class="scrolling-image">
-            <img src="https://formaeffimera.com/svg/HR.svg" alt="Horror Vacui Graphic" class="scrolling-image">
-            <img src="https://formaeffimera.com/svg/HR.svg" alt="Horror Vacui Graphic" class="scrolling-image">
-            <img src="https://formaeffimera.com/svg/HR.svg" alt="Horror Vacui Graphic" class="scrolling-image">
-            <img src="https://formaeffimera.com/svg/HR.svg" alt="Horror Vacui Graphic" class="scrolling-image">
-            <img src="https://formaeffimera.com/svg/HR.svg" alt="Horror Vacui Graphic" class="scrolling-image">
-            <img src="https://formaeffimera.com/svg/HR.svg" alt="Horror Vacui Graphic" class="scrolling-image">
-            <img src="https://formaeffimera.com/svg/HR.svg" alt="Horror Vacui Graphic" class="scrolling-image">
-            <img src="https://formaeffimera.com/svg/HR.svg" alt="Horror Vacui Graphic" class="scrolling-image">
-            <img src="https://formaeffimera.com/svg/HR.svg" alt="Horror Vacui Graphic" class="scrolling-image">
             <img src="https://formaeffimera.com/svg/HR.svg" alt="Horror Vacui Graphic" class="scrolling-image">
             <img src="https://formaeffimera.com/svg/HR.svg" alt="Horror Vacui Graphic" class="scrolling-image">
             <img src="https://formaeffimera.com/svg/HR.svg" alt="Horror Vacui Graphic" class="scrolling-image">
