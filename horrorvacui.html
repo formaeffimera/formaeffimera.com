@@ -12,60 +12,84 @@
             box-sizing: border-box;
         }
 
-        /* Imposta il corpo della pagina */
+        /* Blocco della pagina */
         body {
-            height: 100vh; /* Altezza fissa dello schermo */
-            overflow: hidden; /* Impedisce scrolling */
-            background-color: black; /* Sfondo nero */
+            height: 100vh; /* Altezza dello schermo */
+            overflow: hidden; /* Evita scrolling */
+            background-color: black;
             display: flex;
             justify-content: center;
             align-items: center;
         }
 
-        /* Contenitore dello scorrimento */
-        .scroll-container {
-            display: flex; /* Dispone gli elementi in fila */
-            position: absolute;
+        /* Sfondo animato */
+        .background-animation {
+            position: fixed; /* Fisso allo schermo */
             top: 0;
             left: 0;
-            height: 100vh; /* Altezza bloccata allo schermo */
+            width: 100vw; /* Larghezza dello schermo */
+            height: 100vh; /* Altezza dello schermo */
+            overflow: hidden; /* Evita spazi extra */
+            z-index: -1; /* Dietro a tutto il contenuto */
+        }
+
+        /* Contenitore dello scorrimento */
+        .scroll-container {
+            display: flex;
+            width: 200%; /* Doppio dello schermo per continuità */
+            height: 100%; /* Altezza bloccata */
             animation: scroll-left 10s linear infinite; /* Movimento continuo */
         }
 
         /* Immagine SVG */
         .scrolling-image {
-            height: 100%; /* Adatta l'altezza allo schermo */
-            width: auto; /* Mantiene la proporzione naturale del file */
-            flex-shrink: 0; /* Impedisce ridimensionamento */
+            height: 100%; /* Altezza sempre bloccata */
+            width: auto; /* Mantiene proporzioni naturali */
+            flex-shrink: 0; /* Evita ridimensionamenti */
         }
 
-        /* Animazione dello scorrimento */
+        /* Animazione infinita dello scorrimento */
         @keyframes scroll-left {
             0% {
-                transform: translateX(0); /* Inizia dalla posizione originale */
+                transform: translateX(0); /* Partenza */
             }
             100% {
-                transform: translateX(-100%); /* Scorre di una larghezza del contenitore */
+                transform: translateX(-50%); /* Metà del contenitore */
             }
         }
 
-        /* Specifiche per dispositivi mobili */
+        /* Contenuto aggiuntivo (non influenzato dall'animazione) */
+        .content {
+            position: relative;
+            z-index: 1; /* Sopra l'animazione */
+            color: white;
+            text-align: center;
+        }
+
+        /* Blocca lo zoom sullo sfondo su dispositivi mobili */
         @media (max-width: 768px) {
-            .scroll-container {
-                height: 100vh; /* Altezza sempre bloccata */
-            }
-            .scrolling-image {
-                height: 100%; /* Scritta bloccata rispetto all'altezza dello schermo */
+            body {
+                touch-action: manipulation; /* Previene zoom su sfondo */
             }
         }
     </style>
 </head>
 <body>
-    <div class="scroll-container">
-        <!-- Copie consecutive dell'immagine SVG -->
-        <img src="https://formaeffimera.com/svg/HR.svg" alt="Horror Vacui Graphic" class="scrolling-image">
-        <img src="https://formaeffimera.com/svg/HR.svg" alt="Horror Vacui Graphic" class="scrolling-image">
-        <img src="https://formaeffimera.com/svg/HR.svg" alt="Horror Vacui Graphic" class="scrolling-image">
+    <!-- Sfondo animato -->
+    <div class="background-animation">
+        <div class="scroll-container">
+            <!-- Duplica le immagini SVG per continuità infinita -->
+            <img src="https://formaeffimera.com/svg/HR.svg" alt="Horror Vacui Graphic" class="scrolling-image">
+            <img src="https://formaeffimera.com/svg/HR.svg" alt="Horror Vacui Graphic" class="scrolling-image">
+            <img src="https://formaeffimera.com/svg/HR.svg" alt="Horror Vacui Graphic" class="scrolling-image">
+            <img src="https://formaeffimera.com/svg/HR.svg" alt="Horror Vacui Graphic" class="scrolling-image">
+        </div>
+    </div>
+
+    <!-- Contenuto aggiuntivo -->
+    <div class="content">
+        <h1>Benvenuto a Horror Vacui</h1>
+        <p>Questo è un contenuto aggiuntivo che puoi zoomare!</p>
     </div>
 </body>
 </html>
